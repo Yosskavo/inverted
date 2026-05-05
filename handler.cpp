@@ -1,5 +1,7 @@
 #include "cli.h"
 
+// TODO: split this to functions and handle the movement
+
 void	ft_start_print_in_screen()
 {
 	int	c;
@@ -26,8 +28,9 @@ void	ft_start_print_in_screen()
 			}
 			else if (line > 1)
 			{
+				deleteln();
 				line--;
-				// deleteln();
+				move(line - 1, _place[line]);
 			}
 		}
 		else if (c == '\n')
